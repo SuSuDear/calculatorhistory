@@ -12,7 +12,7 @@
 
     self.view.backgroundColor = [UIColor colorWithRed:0.2 green:0.2 blue:0.2 alpha:1.0];
 
-    self.navigationItem.title = @"历史";
+    self.navigationItem.title = @"历史记录";
     self.navigationController.navigationBar.backgroundColor = [UIColor colorWithRed:0.15 green:0.15 blue:0.15 alpha:1.0];
     self.navigationController.navigationBar.tintColor = [UIColor systemOrangeColor];
 
@@ -114,7 +114,7 @@
 
 
 - (UISwipeActionsConfiguration *)tableView:(UITableView *)tableView trailingSwipeActionsConfigurationForRowAtIndexPath:(NSIndexPath *)indexPath {
-    UIContextualAction *deleteAction = [UIContextualAction contextualActionWithStyle:UIContextualActionStyleDestructive title:@"Delete" handler:^(UIContextualAction *action, __kindof UIView *sourceView, void (^completionHandler)(BOOL)) {
+    UIContextualAction *deleteAction = [UIContextualAction contextualActionWithStyle:UIContextualActionStyleDestructive title:@"删除" handler:^(UIContextualAction *action, __kindof UIView *sourceView, void (^completionHandler)(BOOL)) {
         [[CHHistoryManager sharedManager] remove:indexPath.row];
         self.data = [[CHHistoryManager sharedManager] history];
         [self.tableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationAutomatic];
@@ -123,7 +123,7 @@
         completionHandler(YES);
     }];
 
-    UIContextualAction *copyAction = [UIContextualAction contextualActionWithStyle:UIContextualActionStyleNormal title:@"Copy\nResult" handler:^(UIContextualAction *action, __kindof UIView *sourceView, void (^completionHandler)(BOOL)) {
+    UIContextualAction *copyAction = [UIContextualAction contextualActionWithStyle:UIContextualActionStyleNormal title:@"复制" handler:^(UIContextualAction *action, __kindof UIView *sourceView, void (^completionHandler)(BOOL)) {
         AudioServicesPlaySystemSound(1519);
         UIPasteboard *pasteboard = [UIPasteboard generalPasteboard];
         NSString *equation = self.data[indexPath.row];
