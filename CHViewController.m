@@ -12,12 +12,12 @@
 
     self.view.backgroundColor = [UIColor colorWithRed:0.2 green:0.2 blue:0.2 alpha:1.0];
 
-    self.navigationItem.title = @"History";
+    self.navigationItem.title = @"历史";
     self.navigationController.navigationBar.backgroundColor = [UIColor colorWithRed:0.15 green:0.15 blue:0.15 alpha:1.0];
     self.navigationController.navigationBar.tintColor = [UIColor systemOrangeColor];
 
-    self.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"Done" style:UIBarButtonItemStylePlain target:self action:@selector(dismiss)];
-    self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"Clear" style:UIBarButtonItemStylePlain target:self action:@selector(clearHistory)];
+    self.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"完成" style:UIBarButtonItemStylePlain target:self action:@selector(dismiss)];
+    self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"清除" style:UIBarButtonItemStylePlain target:self action:@selector(clearHistory)];
 
 
     self.tableView = [[UITableView alloc] init];
@@ -161,7 +161,7 @@
     ]];
 
     UILabel *label = [[UILabel alloc] init];
-    label.text = @"No History";
+    label.text = @"暂无历史记录";
     label.font = [UIFont roundedFontOfSize:24 weight:UIFontWeightRegular];
     [view addSubview:label];
     label.translatesAutoresizingMaskIntoConstraints = NO;
