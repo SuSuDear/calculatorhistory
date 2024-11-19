@@ -38,9 +38,9 @@ NSString *relativeDateFormat(NSDate *date) {
     NSString *day;
     NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
     if ([[NSCalendar currentCalendar] isDateInToday:date]) {
-        day = @"Today";
+        day = @"今天";
     } else if ([[NSCalendar currentCalendar] isDateInYesterday:date]) {
-        day = @"Yesterday";
+        day = @"昨天";
     } else {
         [dateFormatter setDateFormat:@"MMM d, yyyy"];
         day = [dateFormatter stringFromDate:date];
